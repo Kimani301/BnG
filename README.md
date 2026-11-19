@@ -31,6 +31,18 @@ one and keeps your sales, offers, settings and granted permissions. Keep that fi
 (This key is for your own use; do not publish the repo's key for a Play Store app. A public repo also makes
 the key public, so only install APKs you built yourself.)
 
+## If your GitHub link shows the wrong thing
+The link only shows the install page when GitHub Pages is told to use the build. Check these in order:
+1. **Settings > Pages > Source must be "GitHub Actions"** (not "Deploy from a branch"). With "Deploy from a branch"
+   GitHub just shows this README or a blank page.
+2. The repository must be **public** (free Pages needs that).
+3. **Actions** tab: the latest run of *Build Bn APK and publish install page* must have green ticks on BOTH
+   `build` and `deploy`. If it is red, open it and read the error. If there is no run at all, the `.github`
+   folder was not uploaded (hidden folders are often skipped when dragging files). Upload it again.
+4. Upload the **unzipped contents** to the repo root (README.md, app, docs and .github must sit at the top level,
+   not inside another folder, and not as a .zip file).
+5. After a green run, open `https://YOUR-USERNAME.github.io/YOUR-REPO/` and refresh (hold the reload button, or use a private tab).
+
 ## First run on the phone
 Bn asks for everything it needs, one step at a time:
 1. Phone, SMS and Notifications permissions. If Android shows them greyed out or "Restricted setting":
